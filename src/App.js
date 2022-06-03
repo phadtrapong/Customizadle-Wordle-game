@@ -1,11 +1,23 @@
-import './App.css'
+import { useEffect, useState } from 'react'; 
 
 function App() {
+  const [solution, setSolution] = useState(null)
+
+  useEffect(() => {
+    setSolution("ninja")
+    // fetch('https://https://3001-phadtrapong-trywordle-1vui1r0x0au.ws-us46.gitpod.io/solutions')
+    // .then(res => res.json())
+    // .then(json => {
+    //   setSolution({"id": 1, "word": "ninja"})
+    // })
+  }, [])
+
   return (
     <div className="App">
       <h1>Wordle (Lingo)</h1>
+      {solution && <div>{solution}</div>}
     </div>
-  );
+  )
 }
 
 export default App
