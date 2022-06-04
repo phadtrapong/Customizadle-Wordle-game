@@ -131,6 +131,7 @@ h1 {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin: auto 8px;
 }
 .keypad-row > button {
   display: block;
@@ -145,6 +146,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  border-style: outset;
 }
 .keypad-row > button.long {
   width: 100px;
