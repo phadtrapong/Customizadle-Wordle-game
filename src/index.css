@@ -68,7 +68,7 @@ h1 {
   top: 0;
   left: 0;
 }
-.modal div {
+.modal div.container {
   max-width: 480px;
   background: #fff;
   padding: 40px;
@@ -165,4 +165,17 @@ h1 {
   background: #a1a1a1;
   color: #fff;
   transition: all 0.3s ease-in;
+}
+
+.share-container {
+  margin-top: 10px;
+  border: 0
+}
+.share-container > button {
+  background-color: #5ac85a;
+  color: #fff;
+  padding: 6px 20px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
 }
