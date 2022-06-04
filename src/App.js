@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'; 
+import { useEffect, useState } from 'react';
 import Wordle from './components/Wordle';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Wordle (Lingo)</h1>
+      <h1>YouWordle</h1>
       {solution && <Wordle solution={solution}/>}
     </div>
   )
