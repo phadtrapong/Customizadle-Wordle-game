@@ -10,6 +10,7 @@ export default function Wordle({ solution }) {
 
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup)
+    
     if (isCorrect || turn > 5) {
       setTimeout(() => {
         setShowModal(true)
@@ -17,7 +18,9 @@ export default function Wordle({ solution }) {
       window.removeEventListener('keyup', handleKeyup)
     }
 
-    return () => window.removeEventListener('keyup', handleKeyup)
+    return () => { 
+      window.removeEventListener('keyup', handleKeyup)
+    }
   }, [ handleKeyup, isCorrect, turn ])
 
   useEffect(() => {
@@ -26,7 +29,7 @@ export default function Wordle({ solution }) {
   )
   return (<div>
     <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
-    <Keypad usedKeys={usedKeys} />
+    <Keypad usedKeys={usedKeys} handleKeyup={handleKeyup} />
     {showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution}/>}
     </div>
   )
