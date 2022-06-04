@@ -7,7 +7,7 @@ const useWordle = (solution) => {
   const [history, setHistory] = useState([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false)
   const [usedKeys, setUsedKeys] = useState({})
-  const [shareGuess, setShareGuess] = useState([ 'YouWordle\n\n'])
+  const [shareGuess, setShareGuess] = useState([ 'Sharedle\n\n'])
   // format a guess into an array of letter objects 
   // e.g. [{key: 'a', color: 'yellow'}]
   const formatGuess = () => {

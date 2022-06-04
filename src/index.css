@@ -123,6 +123,17 @@ h1 {
   }
 }
 
+@keyframes flipkeypad {
+  0% {
+    color: #333;
+    background: #eee;
+  }
+  100% {
+    background: var(--background);
+    color: #fff;
+  }
+}
+
 .keypad {
   max-width: 500px;
   margin: 20px auto;
@@ -152,19 +163,16 @@ h1 {
   width: 100px;
 }
 .keypad-row > button.green {
-  background: #5ac85a;
-  color: #fff;
-  transition: all 0.3s ease-in;
+  --background: #5ac85a;
+  animation: flipkeypad 0.3s ease 2.2s forwards;
 }
 .keypad-row > button.yellow {
-  background: #e2cc68;
-  color: #fff;
-  transition: all 0.3s ease-in;
+  --background: #e2cc68;
+  animation: flipkeypad 0.3s ease 2.2s forwards;
 }
 .keypad-row > button.grey {
-  background: #a1a1a1;
-  color: #fff;
-  transition: all 0.3s ease-in;
+  --background: #a1a1a1;
+  animation: flipkeypad 0.3s ease 2.2s forwards;
 }
 
 .share-container {
