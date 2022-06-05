@@ -7,7 +7,7 @@ const useWordle = (solution) => {
   const [history, setHistory] = useState([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false)
   const [usedKeys, setUsedKeys] = useState({})
-  const [shareGuess, setShareGuess] = useState([ 'Sharedle\n\n'])
+  const [shareGuess, setShareGuess] = useState([ 'Customizadle\n'])
   // format a guess into an array of letter objects 
   // e.g. [{key: 'a', color: 'yellow'}]
   const formatGuess = () => {
@@ -77,6 +77,16 @@ const useWordle = (solution) => {
     })
     setShareGuess((prevShareGuess) => {
         let newShareGuess = prevShareGuess
+        if (newShareGuess.length === 1)
+        {
+            const queryParams = new URLSearchParams(window.location.search);
+            const q = queryParams.get('q');
+            if (q != null)
+            {
+                newShareGuess += q
+                newShareGuess += '\n'
+            }
+        }
         formattedGuess.forEach((l) => {
             if (l.color === 'green') {
                 newShareGuess += '🟩'
@@ -105,10 +115,7 @@ const useWordle = (solution) => {
         if (turn > 5) {
             return
         }
-        // cannot submit duplicate word
-        if (history.includes(currentGuess)) {
-            return
-        }
+        
         // word length need to be 5
         if (currentGuess.length !== 5){
             return

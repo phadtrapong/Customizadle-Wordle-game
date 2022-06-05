@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import Createdle from './components/Createdle';
 import Wordle from './components/Wordle';
 
 function App() {
   const [solution, setSolution] = useState(null)
+  const [mode, setMode] = useState('game')
+
   const keyToWord = {
     1: 'a',
     2: 'b',
@@ -58,11 +61,25 @@ function App() {
     // })
   }, [])
 
+  const toggleMode = () => {
+    if (mode === 'game') 
+    {
+      setMode('create')
+    }
+    else {
+      setMode('game')
+    }
+  }
+
   return (
     <div className="App">
-      {/* <button>Create YouWordle +</button> */}
-      <h1>Sharedle</h1>
-      {solution && <Wordle solution={solution}/>}
+      <button className='switch-mode' onClick={() => toggleMode()}>{mode === 'game' 
+        ? 'Make Question +'
+        : 'Back to game'}
+      </button> 
+      <h1>Customizadle</h1>
+      {mode === 'game' && solution && <Wordle solution={solution} isStart={mode === 'game'}/>}
+      {mode === 'create' && <Createdle toggleMode={toggleMode} isStart={mode === 'create'}/>}
     </div>
   )
 }

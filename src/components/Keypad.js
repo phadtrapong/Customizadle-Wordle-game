@@ -13,7 +13,8 @@ export default function Keypad({ usedKeys, handleKeyup }) {
       {"key": "o"},
       {"key": "p"}]
 
-  const letters_second_row = [{"key": "a"},
+  const letters_second_row = [
+      {"key": "a"},
       {"key": "s"},
       {"key": "d"},
       {"key": "f"},
