@@ -79,8 +79,7 @@ const useWordle = (solution) => {
         let newShareGuess = prevShareGuess
         if (newShareGuess.length === 1)
         {
-            const queryParams = new URLSearchParams(window.location.search);
-            const q = queryParams.get('q');
+            const q = window.location.href
             if (q != null)
             {
                 newShareGuess += q
