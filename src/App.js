@@ -78,7 +78,7 @@ function App() {
         : 'Back to game'}
       </button> 
       <h1>Customizadle</h1>
-      {mode === 'game' && solution && <Wordle solution={solution} isStart={mode === 'game'}/>}
+      {mode === 'game' && solution && <Wordle solution={solution} isStart={mode === 'game'} toggleMode={toggleMode} />}
       {mode === 'create' && <Createdle toggleMode={toggleMode} isStart={mode === 'create'}/>}
     </div>
   )

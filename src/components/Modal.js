@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Modal({ isCorrect, turn, solution, shareGuess }) {
+export default function Modal({ isCorrect, turn, solution, shareGuess, toggleMode }) {
   
   const [showCopied, setShowCopied] = useState(false)
   const generateScoreCard = async () => {
@@ -26,6 +26,7 @@ export default function Modal({ isCorrect, turn, solution, shareGuess }) {
             <p>You found solution in {turn} guesses</p>
             {showCopied && renderCopied()}
             {renderShareButton()}
+            <button className='back-to-game' onClick={() => toggleMode()}>Make Question +</button>
         </div>)}
         {!isCorrect && (<div className='container'>
             <h1>No Worry!</h1>
@@ -33,6 +34,7 @@ export default function Modal({ isCorrect, turn, solution, shareGuess }) {
             <p>Better luck next time</p>
             {showCopied && renderCopied()}
             {renderShareButton()}
+            <button className='back-to-game' onClick={() => toggleMode()}>Make Question +</button>
         </div>)}
     </div>
   )
